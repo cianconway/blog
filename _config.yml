@@ -5,7 +5,7 @@ title: "Cian Conway"
 description: "Blog of a twenty-something Irish developer"
 keywords: "Cian, Conway, Irish, developer"
 baseurl: "/"
-url: "http://cianconway.tech"
+url: "http://cianconway.github.io"
 # url: "http://127.0.0.1:4000"
 
 # author
@@ -61,8 +61,6 @@ sections:
 languages:
   - locale: 'en'
     flag: 'static/img/flags/United-States.png'
-  - locale: 'zh'
-    flag: 'static/img/flags/China.png'
 
 # blog img path
 img_path: 'http://www.jack003.com/static/img/blog'
@@ -84,13 +82,9 @@ disqus:
 bshare:
   uuid: 513f778e-a8f7-4c20-9ec2-d29cc2328d75
 
-# baidu analytics
-ba:
-  uuid: 317acca9ef9255b934e46371e471431d
-
 # google analytics
 ga:
-  id: UA-73784599-1
+  # id: UA-73784599-1 @todo
 
 # Build settings
 encoding: "utf-8"
