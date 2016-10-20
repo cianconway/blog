@@ -1,65 +1,22 @@
-# Jalpc. [![Analytics](https://ga-beacon.appspot.com/UA-73784599-1/welcome-page)](https://github.com/Jack614/jalpc_jekyll_theme)
-
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badge/)
 
-<http://www.jack003.com>
-
 ![Blog](blog.gif)
 
-This is a simple, beautiful and swift theme for Jekyll. It's mobile first, fluidly responsive, and delightfully lightweight.
-
-It's pretty minimal, but leverages large type and drastic contrast to make a statement, on all devices.
-
-The landing page of the blog is bilingual page.
-
-It is my pleasure to contact me, you can give me your website or some advice about my website. Let's build a wonderful Jekyll theme together!
-
-## Ad
-
-[Jalpc-A](https://github.com/Jack614/Jalpc-A): another Jekyll theme written by [AngularJS](https://angularjs.org/).
+Simple blog consisiting of a dev diary among other thingss
 
 ## Getting Started
 
-If you're completely new to Jekyll, I recommend checking out the documentation at <http://jekyllrb.com> or there's a tutorial by Smashing Magazine.
-
-#### Fork, then clone
-
-**Fork** the repo, and then **clone** it so you've got the code locally.
-
-```
-$ git clone https://github.com/<your githubname>/jalpc_jekyll_theme.git
-$ cd jalpc_jekyll_theme
-$ gem install jekyll # If you don't have jekyll installed
-$ rm -rf _site && jekyll server
-```
+If you're completely new to Jekyll, I recommend checking out the documentation at <http://jekyllrb.com> website but it is piss easy to set up. 
+ 'gem install jekyll bundler
+  jekyll new <whatever-the-hell-you-want-to-call-it>
+  cd whatever-the-hell-you-want-to-call-it
+  bundle exec jekyll serve'
 
 ### Modify `_config.yml`
 
-The _config.yml located in the root of the jalpc_jekyll_theme directory contains all of the configuration details for the Jekyll site. The defaults are:
-
-``` yml
-# Website settings
-title: "Jalpc"
-description: "Jack's blog,use Jekyll and github pages."
-keywords: "Jack,Jalpc,blog,Jekyll,github,gh-pages"
-
-baseurl: "/"
-url: "http://www.jack003.com"
-# url: "http://127.0.0.1:4000"
-
-# author
-author:
-  name: 'Jack'
-  first_name: 'Jia'
-  last_name: 'Kun'
-  email: 'me@jack003.com'
-  facebook_username: 'jiakunnj'
-  github_username: 'Jack614'
-  head_img: 'static/img/landing/Jack.jpg'
-...
-```
+The _config.yml located in the root of the jalpc_jekyll_theme directory contains all of the configuration details for the Jekyll site.
 
 #### Index page
 
@@ -123,116 +80,9 @@ img_path: '/path/of/blog/img/'
 
 If you start server on localhost, you can turn on `# url: "http://127.0.0.1:4000"`.
 
-### Pagination
-
-The pagination in jekyll is not very perfect,so I use front-end web method,there is a [blog](http://www.jack003.com/html/2016/06/04/jekyll-pagination-with-jpages.html) about the method and you can refer to [jPages](http://luis-almeida.github.io/jPages).
-
 ### Page counter
 
 Many third party page counter platform is to slow,so I count my website page view myself,the javascript file is `static/js/count_index.js`,the backend is [Leancloud](https://leancloud.cn).
-
-### Bilingual Page
-
-The landing page of the blog is bilingual page,when you click national flag,the page language changes.The fllowing is how to set up bilingual page.
-
-#### Step 1
-
-To add i18 support for your app you need to define what text you would like to translate. The best way to define your text is to store it in external json file. For example:
-
-**Each language you should have own json file!**
-
-en.json
-
-``` json
-{
-  "website":{
-    "title": "Jalpc"
-  },
-  "nav":{
-    "home": "Home",
-    "about_me": "About",
-    "skills": "Skills",
-    "career": "Career",
-    "blog": "Blog",
-    "contact": "Contact"
-  }
-}
-```
-
-cn.json
-
-``` json
-{
-  "website":{
-    "title": "杰克的博客"
-  },
-  "nav":{
-    "home": "首页",
-    "about_me": "关于我",
-    "skills": "技能",
-    "career": "职业",
-    "blog": "博客",
-    "contact": "联系我"
-  }
-}
-```
-
-#### Step 2
-
-Next you need to add html indicators in all place you want to use i18.(index.html)
-
-``` html
-<a class="navbar-brand" href="#page-top" id="i18_title"><span data-i18n="website.title">{{ site.title }}</span></a>
-```
-
-#### Step 3
-
-Next you need to initialise the i18next plugin:
-json files are located in `static/locales` folder.
-
-``` javascript
-$.i18n.init(
-    resGetPath: 'locales/__lng__.json',
-    load: 'unspecific',
-    fallbackLng: false,
-    lng: 'en'
-}, function (t)
-    $('#i18_title').i18n();
-});
-```
-
-#### Step 4
-
-After that if you want to change the language you just need to add buttons and fire the i18n.setLng() function.
-
-HTML markup
-
-``` html
-<a class="btn btn-sm set_en"><img src="{{"static/img/flags/64/United-States.png"| prepend: site.baseurl }}" height="16px" width="16px"></a>
-<a class="btn btn-sm set_cn"><img src="{{"static/img/flags/64/China.png"| prepend: site.baseurl }}" height="16px" width="16px"></a>
-```
-
-Javascript code
-
-``` javascript
-$('.set_en').on('click', function (){
-    i18n.setLng('en', function(){
-
-        $('#i18_title').i18n();
-
-   });
-});
-
-$('.set_cn').on('click', function (){
-    i18n.setLng('cn', function(){
-
-        $('#i18_title').i18n();
-
-    });
-});
-```
-
-Link: [i18next](http://i18next.github.io/i18next/)
 
 ### Web analytics
 
@@ -263,48 +113,3 @@ Just use it.
 ### CNAME
 
 Replace your website domain in **CNAME** file.
-
-### Put in a Jalpc Plug
-
-If you want to give credit to the Jalpc theme with a link to my personal website <http://www.jack003.com>, that'd be awesome. No worries if you don't.
-
-### Enjoy
-
-Hope you enjoy using Jalpc. If you encounter any issues, please feel free to let me know by creating an issue. I'd love to help.
-
-## Upgrading Jalpc
-
-Jalpc is always being improved by its users, so sometimes one may need to upgrade.
-
-### Ensure there's an upstream remote
-
-If `git remote -v` doesn't have an upstream listed, you can do the following to add it:
-
-```
-git remote add upstream https://github.com/Jack614/jalpc_jekyll_theme.git
-```
-
-### Pull in the latest changes
-
-```
-git pull upstream gh-pages
-```
-
-There may be merge conflicts, so be sure to fix the files that git lists if they occur. That's it!
-
-## Thanks to the following
-
-* [Jekyll](http://jekyllrb.com)
-* [Bootstrap](http://www.bootcss.com)
-* [jPages](http://luis-almeida.github.io/jPages)
-* [i18next](http://i18next.github.io/i18next)
-* [pixyll](https://github.com/johnotander)
-* [androiddevelop](https://github.com/androiddevelop)
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
