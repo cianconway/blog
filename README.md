@@ -4,6 +4,8 @@
 
 ![Blog](blog.gif)
 
+# Cian Conway
+
 Simple blog consisiting of a dev diary among other thingss
 
 ## Getting Started
